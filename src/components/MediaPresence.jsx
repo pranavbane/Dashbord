@@ -45,7 +45,7 @@ const MediaPresence = () => {
     <section className="media-section p-0" data-testid="media-section">
       <div className="row">
       {/* <Container className="position-relative" style={{ zIndex: 1 }}> */}
-       <Col lg={6} className="bg-success-subtle py-4 px-8">
+       <Col lg={6} className=" py-4 px-8" style={{background: "#e2e4c4"}}>
             <Carousel
               fade
               interval={5000}
@@ -86,7 +86,7 @@ const MediaPresence = () => {
 
           </Col>
 
-          <Col lg={6} className="py-5 px-5"  style={{ backgroundColor: "#b5e550" }}>
+          <Col lg={6} className="py-5 px-5"  style={{ backgroundColor: "#a3a86b" }}>
             <h3>OUR PRESENCE IN MEDIA</h3>
             <h5 className="mt-4">An authored article in Informist Media</h5>
             <p className="date">June 7, 2023</p>
