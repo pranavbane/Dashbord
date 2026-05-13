@@ -532,7 +532,7 @@ h5 {
   color: #fff;
   font-weight: 500;
   font-size: 25px;
-  margin-top: 8px;
+  margin-top: 2px;
   margin-bottom: 0;
 }
 
@@ -568,6 +568,7 @@ h5 {
 .media-carousel .carousel-control-prev,
 .media-carousel .carousel-control-next {
   width: 5%;
+  margin: 10px;
   opacity: 0;
   transition: opacity 0.25s ease;
   filter: invert(1);
@@ -583,6 +584,12 @@ h5 {
   margin: 10px;
   justify-content: end;
 }
+
+.promo-carousel .carousel-indicators {
+  justify-content: start !important;
+}
+
+
 
 .media-carousel .carousel-indicators [data-bs-target] {
   width: 8px;
@@ -1114,6 +1121,8 @@ h5 {
   min-height: 160px;
 }
 
+
+
 .marketing-col {
   background: var(--abc-olive);
   color: #fff;
@@ -1200,7 +1209,7 @@ h5 {
 }
 
 .partner-row {
-  background: var(--abc-olive-soft);
+  background: var(--abc-olive);
   display: flex;
   align-items: center;
   padding: 14px 22px;

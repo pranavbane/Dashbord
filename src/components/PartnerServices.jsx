@@ -60,11 +60,11 @@ const PartnerServices = () => {
                         {services.map((s, i) => (
                             <div className="partner-row" key={i} data-testid={`partner-row-${i}`}>
                                 <i className={s.icon}></i>
-                                <span className="label">{s.label}</span>
+                                <span className="label text-color">{s.label}</span>
                                 {s.actions.map((a, j) => (
                                     <button
                                         key={j}
-                                        className="btn-watch"
+                                        className="btn-watch ]"
                                     >
                                         {a}
                                     </button>

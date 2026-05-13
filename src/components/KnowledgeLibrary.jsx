@@ -126,6 +126,7 @@ const KnowledgeLibrary = () => {
               <div className="keyboard"></div>
               <div className="mouse"></div>
             </div> */}
+            <div className="d-flex justify-content-center">
             <svg width="600" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
   <rect width="600" height="500" fill="#bcbcbc" />
 
@@ -184,7 +185,7 @@ const KnowledgeLibrary = () => {
     <line x1="20" y1="0" x2="20" y2="25" stroke="#90a4ae" strokeWidth="2"/>
   </g>
 </svg>
-
+</div>
           </Col>
         </Row>
       </Container>

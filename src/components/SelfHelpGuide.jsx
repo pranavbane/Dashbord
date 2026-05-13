@@ -17,7 +17,7 @@ const guides = [
 
 const SelfHelpGuide = () => {
   return (
-    <section className="shg-section" data-testid="self-help-guide">
+    <section className="shg-section mt-4" data-testid="self-help-guide">
       <h3 className="section-heading">SELF HELP GUIDE</h3>
       <Container className="shg-grid">
         <Row>

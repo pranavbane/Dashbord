@@ -50,31 +50,88 @@
 
 // export default KnowledgeCentre;
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import icon from "../assets/aditya_Birla_Group_Logo.png";
 import { Container } from "react-bootstrap";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const KnowledgeCentre = () => {
+  const sectionRef = useRef(null);
+  const logoRef = useRef(null);
+  const titleRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+
+      // LEFT BOX → Left to Right
+      gsap.from(logoRef.current, {
+        x: -150,
+        opacity: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 60%",
+          end: "bottom 20%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+
+      // TITLE → Right to Left
+      gsap.from(titleRef.current, {
+        x: 150,
+        opacity: 0,
+        duration: 1.5,
+        ease: "power3.out",
+
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 60%",
+          end: "bottom 20%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="knowledge-banner" data-testid="knowledge-centre">
+    <section
+      ref={sectionRef}
+      className="knowledge-banner"
+      data-testid="knowledge-centre"
+    >
       <Container fluid className="p-0">
         <div className="kc-inner">
-          <div className="kc-logo-box bg-danger">
+
+          {/* LEFT LOGO BOX */}
+          <div ref={logoRef} className="kc-logo-box bg-danger">
             <img
               src={icon}
               alt="Aditya Birla Capital Logo"
               className="kc-logo"
             />
+
             <div className="kc-logo-text text-white">
               ADITYA BIRLA
               <br />
               CAPITAL
             </div>
+
             <div className="kc-divider" />
-            <small className="kc-subtext text-white">Aditya Birla Sun Life AMC Ltd.</small>
+
+            <small className="kc-subtext text-white">
+              Aditya Birla Sun Life AMC Ltd.
+            </small>
           </div>
 
-          <div className="kc-title-wrap">
+          {/* RIGHT TITLE */}
+          <div ref={titleRef} className="kc-title-wrap">
             <h1 className="kc-title">
               KNOWLEDGE
               <br />
@@ -86,7 +143,6 @@ const KnowledgeCentre = () => {
               </span>
             </h1>
           </div>
-
 
         </div>
       </Container>

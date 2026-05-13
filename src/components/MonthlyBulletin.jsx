@@ -137,10 +137,11 @@ const MonthlyBulletin = () => {
           <Col lg={6}>
             <Carousel
               fade
-              interval={4500}
+              interval={5000}
               pause="hover"
-              data-testid="promo-carousel"
-              className="promo-carousel"
+              indicators={true}
+              data-testid="media-carousel"
+              className="media-carousel promo-carousel"
             >
               {promoSlides.map((slide, idx) => (
                 <Carousel.Item key={idx}>
@@ -155,9 +156,10 @@ const MonthlyBulletin = () => {
                       </div>
                     </div>
 
-                    <div className="promo-tag">{slide.hashtag}</div>
+                    {/* <div className="promo-tag">{slide.hashtag}</div> */}
 
                   </div>
+
                 </Carousel.Item>
               ))}
             </Carousel>
